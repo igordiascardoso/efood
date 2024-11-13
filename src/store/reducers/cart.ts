@@ -1,42 +1,38 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-type CartState = {
-  items: MenuDataProps[]
-  isOpen: boolean
+export type CartState = {
+  itemsCart: Menu[]
 }
 
 const initialState: CartState = {
-  items: [],
-  isOpen: false
+  itemsCart: []
 }
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    add: (state, action: PayloadAction<MenuDataProps>) => {
-      const product = state.items.find((item) => item.id === action.payload?.id)
+    addToCart: (state, action: PayloadAction<Menu>) => {
+      const restaurant = state.itemsCart.find(
+        (item) => item.id === action.payload.id
+      )
 
-      if (!product) {
-        state.items.push(action.payload)
+      if (!restaurant) {
+        state.itemsCart.push(action.payload)
       } else {
-        alert('O produto já está no carrinho')
+        alert('A comida já estar no carrinho')
       }
     },
-    remove: (state, action: PayloadAction<number>) => {
-      state.items = state.items.filter((item) => item.id !== action.payload)
+    removeOfCart: (state, action: PayloadAction<number>) => {
+      state.itemsCart = state.itemsCart.filter(
+        (item) => item.id !== action.payload
+      )
     },
-    open: (state) => {
-      state.isOpen = true
-    },
-    close: (state) => {
-      state.isOpen = false
-    },
-    clear: (state) => {
-      state.items = []
+    clearCart: (state) => {
+      state.itemsCart = []
     }
   }
 })
 
-export const { add, remove, open, close, clear } = cartSlice.actions
 export default cartSlice.reducer
+export const { addToCart, clearCart, removeOfCart } = cartSlice.actions

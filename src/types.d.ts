@@ -1,69 +1,33 @@
-declare type MenuDataProps = {
+declare interface Menu {
+  foto: string
+  preco: number
   id: number
   nome: string
   descricao: string
-  foto: string
   porcao: string
-  preco: number
 }
 
-declare type RestaurantsDataProps = {
+declare type Restaurants = {
   id: number
   titulo: string
-  avaliacao: string
-  destacado: boolean
+  destacado?: boolean
   tipo: string
+  avaliacao: number
   descricao: string
   capa: string
-  cardapio: MenuDataProps[]
+  cardapio?: Menu[]
 }
 
-declare type DeliveryDataProps = {
-  receiver: string
-  address: {
-    description: string
-    city: string
-    zipCode: string
-    number: number
-    complement: string
-  }
-  payment: {
-    name: string
-    cardNumber: string
-    code: string
-    expires: {
-      month: string
-      year: string
-    }
-  }
-}
-
-declare type ProductProps = {
-  id: number
-  price: number
-}
-
-declare type PurchasePayloadProps = {
-  products: ProductProps[]
-  delivery: {
-    receiver: string
-    address: {
-      description: string
-      city: string
-      zipCode: string
-      number: number
-      complement: string
-    }
-  }
-  payment: {
-    card: {
-      name: string
-      number: string
-      code: string
-      expires: {
-        month: string
-        year: string
-      }
-    }
-  }
+declare type FormValues = {
+  name: string
+  zipCode: string
+  number: string
+  adress: string
+  city: string
+  complement: string
+  cardName: string
+  cardNumber: string
+  cardCode: string
+  expiresMonth: string
+  expiresYear: string
 }
