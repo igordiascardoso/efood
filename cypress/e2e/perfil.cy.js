@@ -2,7 +2,7 @@
 
 describe('Tests for Perfil', () => {
   beforeEach(() => {
-    cy.visit('https://efood-ecommerce-delta.vercel.app/')
+    cy.visit('https://new-efood.vercel.app/')
   })
 
   it('should take the user to the profile page', () => {
