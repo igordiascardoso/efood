@@ -2,7 +2,7 @@
 
 describe('Tests for Home', () => {
   beforeEach(() => {
-    cy.visit('https://efood-ecommerce-delta.vercel.app/')
+    cy.visit('https://new-efood.vercel.app/')
   })
 
   it('should render with 6 restaurants', () => {
