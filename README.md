@@ -21,7 +21,7 @@ Executando o Projeto
 Para iniciar o servidor de desenvolvimento, execute o seguinte comando:
 npm run dev
 
-Isso iniciará o projeto em modo de desenvolvimento. Geralmente, o servidor estará disponível em http://localhost:3000 (confirme a porta no console ou na configuração do projeto).
+Isso iniciará o projeto em modo de desenvolvimento. Geralmente, o servidor estará disponível em http://localhost:5173/ (confirme a porta no console ou na configuração do projeto).
 Notas
 
 Certifique-se de que todas as dependências foram instaladas corretamente antes de executar o projeto.
