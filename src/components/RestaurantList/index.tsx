@@ -7,15 +7,21 @@ type RestaurantListProps = {
 }
 
 export function RestaurantList({ restaurants }: RestaurantListProps) {
+  console.log('Restaurantes:', restaurants.map(r => ({
+    id: r.id,
+    name: r.name,
+    category: r.category,
+    highlighted: r.highlighted
+  })));
   return (
     <>
-      {/* <S.ListTitle>Restaurantes</S.ListTitle> */}
       <S.ListContainer>
         {restaurants.map((restaurant, index) => (
           <RestaurantCard
             key={restaurant.id}
             restaurant={restaurant}
-            highlighted={restaurant.highlighted && index===0} // TRUE apenas para o primeiro card
+            highlighted={restaurant.highlighted}
+            isFirst={index === 0} // TRUE apenas para o primeiro restaurante
           />
         ))}
       </S.ListContainer>

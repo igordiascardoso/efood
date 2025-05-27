@@ -5,23 +5,21 @@ import { Link } from 'react-router-dom'
 
 type RestaurantCardProps = {
   restaurant: Restaurant
-  highlighted?: boolean // Controla a visibilidade das etiquetas
+  highlighted?: boolean
+  isFirst?: boolean // Controla a visibilidade da tag "Destaque da semanaa"
 }
 
-export const RestaurantCard = ({ restaurant, highlighted }: RestaurantCardProps) => {
-  console.log(`Card ${restaurant.name} - Destaque: ${highlighted}`)
+export const RestaurantCard = ({ restaurant, highlighted, isFirst }: RestaurantCardProps) => {
+  console.log(`Card ${restaurant.name} - ID: ${restaurant.id} - Destaque: ${highlighted} - Primeiro: ${isFirst}`)
   return (
     <S.CardContainer>
-        {/* Container das etiquetas (só aparece se highlight=true) */}
-        {highlighted ? (
-          <S.TagsContainer>
-            <S.HighlightTag>Destaque da semana</S.HighlightTag>
-            <S.CategoryTag>{restaurant.category}</S.CategoryTag>
-          </S.TagsContainer>
-        ) : null}
+      {highlighted ? (
+        <S.TagsContainer>
+          {isFirst && <S.HighlightTag>Destaque da semana</S.HighlightTag>}
+          <S.CategoryTag>{restaurant.category}</S.CategoryTag>
+        </S.TagsContainer>
+      ) : null}
       <S.CardImage src={restaurant.image} alt={restaurant.name} />
-
-
       <S.CardContent>
         <S.CardHeader>
           <S.CardTitle>{restaurant.name}</S.CardTitle>
