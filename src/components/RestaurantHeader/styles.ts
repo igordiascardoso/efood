@@ -15,6 +15,7 @@ export const HeaderContainer = styled.header<HeaderContentProps>`
   background-image: url(${props => props.$background});
   // background-repeat: no-repeat;
   background-position: center;
+  
 `
 
 export const HeaderContent = styled.div`
@@ -26,6 +27,8 @@ export const HeaderContent = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 154px;
+  position: relative;
+  top: 15px;
 `
 
 export const BackButton = styled(Link)`
@@ -60,6 +63,9 @@ export const CartButton = styled.button`
   border: none;
   border-radius: 8px;
   transition: all 0.3s ease;
+  position: relative;
+  left: -15px;
+  top: 15
 
   &:hover {
     background-color: #fff;
