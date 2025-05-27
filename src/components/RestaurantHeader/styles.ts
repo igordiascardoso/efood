@@ -39,6 +39,9 @@ export const BackButton = styled(Link)`
   font-weight: bold;
   font-size: 18px;
   transition: all 0.3s ease;
+  position:relative;
+  left: 0px;
+
 
   &:hover {
     background-color: #fff;
@@ -57,15 +60,16 @@ export const LogoRestaurant = styled(Link)`
 export const CartButton = styled.button`
   background-color: ${theme.colors.secondary};
   color: ${theme.colors.primary};
-  padding: 8px 10px;;
+  padding: 0px 0px;
   font-weight: bold;
   font-size: 18px;
   border: none;
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
-  left: -15px;
-  top: 15
+  left:-15px;
+
+  
 
   &:hover {
     background-color: #fff;

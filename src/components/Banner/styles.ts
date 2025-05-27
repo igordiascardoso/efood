@@ -38,7 +38,7 @@ export const RestaurantType = styled.span`
   font-weight: 100 !important;
   margin-top: 25px;
   font-family:system-ui !important;
-  opacity: 80%;
+  opacity: 60%;
 
 `
 
