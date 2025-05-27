@@ -1,25 +1,18 @@
-// Funções
-import { useGetHomePageQuery } from '../../services/api'
-
-// Componentes
+// pages/Home/index.tsx
+import { RestaurantList } from '../../components/RestaurantList'
 import Header from '../../components/Header'
-import ProductList from '../../components/ProductList'
+import * as S from './styles'
+import { restaurants } from '../../mocks/restaurant'
+import { Footer } from '../../components/Footer'
 
-const Home = () => {
-  const { data: catalogoServico = [], isLoading: isLoadingRestaurantMenu } =
-    useGetHomePageQuery() // Define um valor padrão vazio para catalogoServico
-
+export function Home() {
   return (
     <>
-      <Header background="light" />
-      <ProductList
-        title=""
-        background="light"
-        efoods={catalogoServico}
-        isLoading={isLoadingRestaurantMenu}
-      />
+      <Header />
+      <S.HomeContainer>
+        <RestaurantList restaurants={restaurants} />
+      </S.HomeContainer>
+      <Footer />
     </>
   )
 }
-
-export default Home

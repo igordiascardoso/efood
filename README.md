@@ -1,46 +1,127 @@
-# Getting Started with Create React App
+# 🍽️ eFood - Delivery Gastronômico
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-orange)
+![React](https://img.shields.io/badge/React-18.2-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Styled Components](https://img.shields.io/badge/Styled%20Components-6.0-green)
 
-## Available Scripts
+## 📌 Visão Geral
+Plataforma de delivery desenvolvida em React com TypeScript, oferecendo:
 
-In the project directory, you can run:
+- Catálogo de restaurantes com destaques
+- Carrinho de compras interativo
+- Design responsivo e acessível
 
-### `npm start`
+## 🛠 Tecnologias
+| Ferramenta | Descrição |
+|------------|-----------|
+| React | Biblioteca front-end |
+| TypeScript | Tipagem estática |
+| Styled Components | Estilização |
+| Context API | Estado global |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ✨ Funcionalidades
+- **Destaques:**
+  ✅ Etiquetas visíveis
+  ✅ Filtro por categoria
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Carrinho:**
+  🛒 Adição/remoção de itens
+  🔢 Ajuste de quantidades
+  💰 Cálculo automático
 
-### `npm test`
+## 🚀 Execução
+```bash
+git clone https://github.com/seu-user/efood.git
+npm install
+npm run dev //ou
+npx vite --force --clearScreen=false
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔍 Layout de Referência
 
-### `npm run build`
+[![Figma](https://img.shields.io/badge/Visualizar%20Layout-Figma-FF6B6B?logo=figma)](https://www.figma.com/file/JjduV2Tg713TzYUUsees8b/efood)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Como Executar o Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone o repositório:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/jrjunior72/ebac_m35_pratica_eplay.git
+```
 
-### `npm run eject`
+2. Instale as dependências:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Execute o ambiente de desenvolvimento:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm run dev
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+📂 Estrutura do Projeto (Atual)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+efood/
+├── public/                   # Assets públicos
+│   ├── images/               # Imagens globais
+│   └── index.html            # Template HTML
+│
+├── src/
+│   ├── assets/               # Assets da aplicação
+│   │   ├── icons/            # Ícones SVG
+│   │   └── images/           # Imagens específicas
+│   │
+│   ├── components/           # Componentes reutilizáveis
+│   │   ├── Banner/
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   │
+│   │   ├── Cart/
+│   │   │   ├── CartItem/
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── styles.ts
+│   │   │   ├── CartModal/
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── styles.ts
+│   │   │   └── index.ts
+│   │   │
+│   │   ├── RestaurantCard/
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   │
+│   │   └── ... (outros componentes)
+│   │
+│   ├── contexts/             # Contextos globais
+│   │   └── CartContext.tsx
+│   │
+│   ├── pages/                # Páginas da aplicação
+│   │   ├── Home/
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   ├── Restaurant/
+│   │   │   ├── index.tsx
+│   │   │   └── styles.ts
+│   │   └── ... (outras páginas)
+│   │
+│   ├── styles/               # Estilos globais
+│   │   ├── themes.ts         # Tema principal
+│   │   └── global.ts         # Estilos globais
+│   │
+│   ├── types/                # Tipagens TypeScript
+│   │   └── index.ts
+│   │
+│   ├── utils/                # Utilitários
+│   │   └── formatCurrency.ts
+│   │
+│   ├── App.tsx               # Componente raiz
+│   ├── main.tsx              # Ponto de entrada
+│   └── routes.tsx            # Configuração de rotas
+│
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── README.md                 # Este arquivo
+```

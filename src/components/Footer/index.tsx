@@ -1,40 +1,41 @@
-// Recursos externos
-import { Link } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link'
-
-// Imagens (não é exatamente um recurso externo, mas também não se encaixa bem em componentes ou estilos)
-import faceSrc from '../../assets/icons/facebook.png'
-import instaSrc from '../../assets/icons/instagram.png'
-import LogoImgHome from '../../assets/icons/logo.png'
-import twSrc from '../../assets/icons/twitter.png'
-
-// Estilos
 import * as S from './styles'
+import logo from '../../assets/images/logo.svg'
+import instagram from '../../assets/images/instagram.png'
+import facebook from '../../assets/images/facebook.png'
+import twitter from '../../assets/images/twitter.png'
+// import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa'
 
-const Footer = () => (
-  <S.Footers className="container">
-    <S.SectionFooter>
-      <Link title="Clique aqui para retornar a pagina home" to="/">
-        <img className="imagemLogo" src={LogoImgHome} alt="efood" />
-      </Link>
-      <S.RedeSociais>
-        <HashLink to="https://www.instagram.com">
-          <img src={instaSrc} alt="Instagram" />
-        </HashLink>
-        <HashLink to="https://www.facebook.com">
-          <img src={faceSrc} alt="Facebook" />
-        </HashLink>
-        <HashLink to="https://www.twitter.com">
-          <img src={twSrc} alt="Twitter" />
-        </HashLink>
-      </S.RedeSociais>
-    </S.SectionFooter>
-    <S.Titulo>
-      A efood é uma plataforma para divulgação de estabelecimentos, a
-      responsabilidade pela entrega, qualidade dos produtos é toda do
-      estabelecimento contratado.
-    </S.Titulo>
-  </S.Footers>
-)
+export const Footer = () => {
+  return (
+    <S.FooterContainer>
+      <S.FooterContent>
+        <S.LogoContainer>
+          <S.Logo to="/">
+            <img src={logo} alt="EFOOD" />
+          </S.Logo>
+        </S.LogoContainer>
 
-export default Footer
+        <S.SocialLinks>
+          <S.SocialLink href="#" aria-label="Instagram">
+            {/* <FaInstagram size={24} /> */}
+            <img src={instagram} alt="Instagram" />
+          </S.SocialLink>
+          <S.SocialLink href="#" aria-label="Facebook">
+            {/* <FaFacebook size={24} /> */}
+            <img src={facebook} alt="Instagram" />
+          </S.SocialLink>
+          <S.SocialLink href="#" aria-label="Twitter">
+            {/* <FaTwitter size={24} /> */}
+            <img src={twitter} alt="Instagram" />
+          </S.SocialLink>
+        </S.SocialLinks>
+
+        <S.FooterText>
+          A efood é uma plataforma para divulgação de estabelecimentos, a
+          responsabilidade pela entrega, qualidade dos produtos é toda do
+          estabelecimento contratado.
+        </S.FooterText>
+      </S.FooterContent>
+    </S.FooterContainer>
+  )
+}

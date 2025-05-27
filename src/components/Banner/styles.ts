@@ -1,73 +1,50 @@
+// components/Banner/styles.ts
+
 import styled from 'styled-components'
-import { breakpoints, colors } from '../../styles'
+import { theme } from '../../styles/theme'
 
-export const ImgBanner = styled.div`
-  width: 100%;
+export const BannerContainer = styled.div`
   height: 280px;
-  display: block;
-  background-repeat: no-repeat;
+  width: 100%;
   background-size: cover;
+  background-position: center;
   position: relative;
+`
 
-  h3 {
-    font-size: 32px;
-    font-weight: 100;
-    color: ${colors.white};
-    padding-top: 25px;
-    margin-left: 171px;
-    z-index: 1;
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+`
+
+export const BannerContent = styled.div`
+  && {
     position: relative;
-
-    /* Responsividade */
-    @media (max-width: ${breakpoints.tablet}) {
-      font-size: 24px;
-      margin-left: 20px;
-      padding-top: 15px;
-    }
-
-    /* Responsividade */
-    @media (max-width: ${breakpoints.mobile}) {
-      font-size: 24px;
-      margin-left: 20px;
-      padding-top: 15px;
-    }
-  }
-
-  h1 {
-    font-size: 32px;
-    font-weight: 900;
-    color: ${colors.white};
-    padding-top: 156px;
-    padding-bottom: 32px;
-    margin-left: 171px;
     z-index: 1;
-    position: relative;
-
-    /* Responsividade */
-    @media (max-width: ${breakpoints.tablet}) {
-      font-size: 28px;
-      margin-left: 20px;
-      padding-top: 100px;
-      padding-bottom: 16px;
-    }
-
-    /* Responsividade */
-    @media (max-width: ${breakpoints.mobile}) {
-      font-size: 28px;
-      margin-left: 20px;
-      padding-top: 100px;
-      padding-bottom: 16px;
-    }
-  }
-
-  &::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    content: '';
-    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 32px;
+    color: ${theme.colors.white};
   }
+`
+
+export const RestaurantType = styled.span`
+  font-size: 32px;
+  font-weight: 100 !important;
+  margin-top: 25px;
+  font-family:system-ui !important;
+  opacity: 80%;
+
+`
+
+export const RestaurantTitle = styled.h2`
+  font-size: 32px;
+  font-weight: 900;
+  margin-botton: 32px;
+  width: 970px !important;
 `

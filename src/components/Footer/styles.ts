@@ -1,42 +1,57 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { theme } from '../../styles/theme'
+import { Link } from 'react-router-dom'
 
-export const Footers = styled.footer`
-  height: 298px;
-  background-color: ${colors.BlanchedAlmond};
+export const FooterContainer = styled.footer`
+  background-color: ${theme.colors.secondary};
+  padding: 40px 0;
+  color: ${theme.colors.white};
 `
-export const SectionFooter = styled.div`
+
+export const FooterContent = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 ${theme.spacing.medium};
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .imagemLogo {
-    width: 125px;
-    height: 57.5px;
-    margin: 40px 0 32.5px 0;
-  }
-`
-
-export const RedeSociais = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 88px;
-  height: 24px;
-  gap: 8px;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
-`
-export const Titulo = styled.h2`
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 11.72px;
   text-align: center;
+`
+
+export const LogoContainer = styled.div`
+  svg {
+    height: 57px;
+    width: auto;
+  }
+`
+
+export const Logo = styled(Link)`
+  img {
+    height: auto;
+    width: 125px;
+    margin-bottom: 32.5px;
+  }
+`
+
+export const SocialLinks = styled.div`
+  display: flex;
+  column-gap: 8px;
+`
+
+export const SocialLink = styled.a`
+  color: ${theme.colors.primary};
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: ${theme.colors.white};
+  }
+`
+
+export const FooterText = styled.p`
+  font-size: 10px;
+  line-height: 1.5;
   max-width: 480px;
-  width: 100%;
-  height: 24px;
-  margin: 80px auto 40px auto;
+  margin-top: 80px;
+  color: ${theme.colors.primary};
 `

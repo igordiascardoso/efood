@@ -1,58 +1,36 @@
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { colors } from '../../styles'
+import styled, { css } from 'styled-components'
+import { theme } from '../../styles/theme'
 
-export const ButtonContainer = styled.button<{ background: 'light' | 'dark' }>`
+type ButtonContainerProps = {
+  fullWidth: boolean
+}
+
+export const ButtonContainer = styled.button<ButtonContainerProps>`
+  background-color: ${theme.colors.primary};
+  color: ${theme.colors.secondary};
   border: none;
-  background-color: ${(props) =>
-    props.background === 'dark' ? colors.BlanchedAlmond : colors.LightSalmon};
-  color: ${(props) =>
-    props.background === 'dark' ? colors.LightSalmon : colors.BlanchedAlmond};
-  width: ${(props) => (props.background === 'dark' ? '304px' : '100%')};
-  height: 100%;
+  padding: ${theme.spacing.medium};
   font-size: 14px;
-  font-weight: 700;
-  line-height: 16px;
-  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
-
-  /* Foco para acessibilidade */
-  &:focus {
-    outline: 2px solid ${colors.BlanchedAlmond};
-    outline-offset: 4px;
-  }
-
-  /* Estilo responsivo */
-  @media (max-width: 768px) {
-    max-width: 100%;
-  }
-`
-
-export const ButtonLink = styled(Link)<{ background: 'light' | 'dark' }>`
-  width: ${(props) => (props.background === 'dark' ? '100%' : '84px')};
-  height: 24px;
-  background-color: ${(props) =>
-    props.background === 'dark' ? colors.BlanchedAlmond : colors.LightSalmon};
-  color: ${(props) =>
-    props.background === 'dark' ? colors.LightSalmon : colors.BlanchedAlmond};
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 16.41px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
   text-align: center;
-  margin-top: 16px;
-  cursor: pointer;
-  padding: 4px 6px;
-  margin-left: 8px;
 
-  /* Foco para acessibilidade */
-  &:focus {
-    outline: 2px solid ${colors.BlanchedAlmond};
-    outline-offset: 4px;
+  &:hover {
+    background-color: ${theme.colors.primaryDark};
   }
 
-  /* Estilo responsivo */
-  @media (max-width: 768px) {
-    max-width: 100%;
+  &:disabled {
+    background-color: ${theme.colors.gray};
+    cursor: not-allowed;
   }
+
+  ${({ fullWidth }) =>
+    fullWidth &&
+    css`
+      width: 100%;
+      display: block;
+    `}
 `
