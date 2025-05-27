@@ -26,7 +26,7 @@ export const HeaderContent = styled.div`
 
   justify-content: space-between;
   align-items: center;
-  padding: 0 154px;
+
   position: relative;
   top: 15px;
 `
@@ -34,13 +34,12 @@ export const HeaderContent = styled.div`
 export const BackButton = styled(Link)`
   background-color: ${theme.colors.secondary};
   color: ${theme.colors.primary};
-  padding: ${theme.spacing.small} ${theme.spacing.medium};
+  
   border-radius: 8px;
   font-weight: bold;
   font-size: 18px;
   transition: all 0.3s ease;
-  position:relative;
-  left: 0px;
+  
 
 
   &:hover {
@@ -54,20 +53,22 @@ export const LogoRestaurant = styled(Link)`
     height: auto;
     width: 125px;
     margin-bottom: auto;
-  }
+    position:relative;
+    left: 17px;
+   
 `
 
 export const CartButton = styled.button`
   background-color: ${theme.colors.secondary};
   color: ${theme.colors.primary};
-  padding: 0px 0px;
+  padding: 0px 0px !important;
   font-weight: bold;
   font-size: 18px;
   border: none;
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
-  left:-15px;
+  
 
   
 
