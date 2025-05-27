@@ -37,7 +37,7 @@ export const BackButton = styled(Link)`
   
   border-radius: 8px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
   transition: all 0.3s ease;
   
 
@@ -54,7 +54,7 @@ export const LogoRestaurant = styled(Link)`
     width: 125px;
     margin-bottom: auto;
     position:relative;
-    left: 17px;
+    left: 25px;
    
 `
 
@@ -63,7 +63,7 @@ export const CartButton = styled.button`
   color: ${theme.colors.primary};
   padding: 0px 0px !important;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
   border: none;
   border-radius: 8px;
   transition: all 0.3s ease;
