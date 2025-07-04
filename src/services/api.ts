@@ -1,5 +1,27 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+// Define types for menu items and restaurants based on JSON structure
+type MenuItem = {
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
+}
+
+type Restaurante = {
+  id: number
+  titulo: string
+  destacado: boolean
+  tipo: string
+  avaliacao: number
+  descricao: string
+  capa: string
+  cardapio: MenuItem[]
+}
+
+// Existing types for purchase functionality
 type Product = {
   id: number
   price: number
@@ -34,21 +56,21 @@ type PurchaseResponse = {
   orderId: string
 }
 
+// Aí com o ENDPOINT
+
 const api = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://fake-api-tau.vercel.app/api/efood'
   }),
   endpoints: (builder) => ({
-    getCardapio: builder.query<MenuItensType[], string>({
+    getCardapio: builder.query<MenuItem[], string>({
       query: (id) => `restaurantes/${id}`,
-      transformResponse: (response: Restaurante) => {
-        return response.cardapio
-      }
+      transformResponse: (response: Restaurante) => response.cardapio
     }),
     getRestaurantes: builder.query<Restaurante[], void>({
       query: () => 'restaurantes'
     }),
-    getRestauranteId: builder.query<MenuType, string>({
+    getRestauranteId: builder.query<Restaurante, string>({
       query: (id) => `restaurantes/${id}`
     }),
     purchase: builder.mutation<PurchaseResponse, PurchasePayload>({
